@@ -1,0 +1,101 @@
+
+    <!-- partial:index.partial.html -->
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Merchandising Kimono</title>
+        <link rel="stylesheet" href="./prodCard/dist/style.css" />
+        <link rel="icon" href="./img/soloCasco.png" />
+        <!-- Vendor Script -->
+        <script
+          src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+          crossorigin="anonymous"
+        ></script>
+      </head>
+
+      <body>
+        <div class="container">
+          <div class="imgBx">
+            <img src="./img/spartaHellfightersKimono.jpeg" alt="" />
+            
+          </div>
+          <div class="details">
+            <div class="content">
+              <h2>
+                Sparta Hellfighters<br />
+                <span>Conjunto de Kimono</span>
+              </h2>
+              <p>
+                Gi negro de BJJ de patrón ergonómico, ligero y con pantalón antidesgarro.
+                <br>
+                Porta orgulloso el escudo de nuestra división especial de luchadores de BJJ. La armadura ideal para tus entrenamientos diarios y de competición.
+                <br><br>
+                De regalo, se entrega con una bolsa transparente personalizada y la faixa grabada con nuestro logo a juego.
+                <br>
+                ¡Pregunta por tu talla!
+              </p>
+              <div class="imgBx imgBx2 tallaPhone">
+                <img src="./img/beltsPhone.jpeg" />
+                <!--<img src="./img/belts.jpeg" />--> 
+              </div>
+              <p class="product-colors">
+                Colores:
+                <span
+                  class="black active"
+                  data-color-primary="#000"
+                  data-color-sec="#212121"
+                  data-pic="./img/spartaHellfightersKimono.jpeg"
+                ></span>
+              </p>
+              <h3>Precio: 75€</h3>
+              <h6>+ gastos de envío</h6>
+              <a
+                href="https://wa.me/34660737517?text=Hola!%20Estoy%20interesad@%20en%20el%20kimono!"
+                ><button>Comprar</button></a
+              >
+            </div>
+          </div>
+        </div>
+        <!---->
+        <div>
+          <img class="tallaPC"  style="width: 17vw;border-radius: 10px;"
+          src="./img/belts.jpeg">
+         <!--<img src="./img/belts.jpeg" />--> 
+        </div>
+
+        <footer>
+          <a
+            href="./store.html"
+            style="-webkit-text-stroke: 1px black; font-size: large"
+            ><strong><- Volver atrás</strong></a
+          >
+        </footer>
+        <script>
+          // Change The Picture and Associated Element Color when Color Options Are Clicked.
+          $(".product-colors span").click(function () {
+            $(".product-colors span").removeClass("active");
+            $(this).addClass("active");
+            $(".active").css("border-color", $(this).attr("data-color-sec"));
+            $("body").css("background", $(this).attr("data-color-primary"));
+            $(".content h2").css("color", $(this).attr("data-color-sec"));
+            $(".content h3").css("color", $(this).attr("data-color-sec"));
+            $(".container .imgBx").css(
+              "background",
+              $(this).attr("data-color-sec")
+            );
+            $(".container .details button").css(
+              "background",
+              $(this).attr("data-color-sec")
+            );
+            $(".imgBx img").attr("src", $(this).attr("data-pic"));
+          });
+        </script>
+      </body>
+    </html>
+    <!-- partial -->
+  </body>
+</html>
